@@ -1,0 +1,16 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: opendebatedevelopment
+  pool: 5
+  host: localhost
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: opendebatetest
+  pool: 5
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: opendebateproduction
+  pool: 5
