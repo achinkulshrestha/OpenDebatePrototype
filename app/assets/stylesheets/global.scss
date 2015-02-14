@@ -1,0 +1,46 @@
+//Global Variables
+
+  //Fonts
+  $header: 'Sue Ellen Francisco', cursive;
+  $body: 'Slabo 27px', serif;
+  $accent1: 'Loved by the King', cursive;
+  $accent2: 'Amatic SC', sans-serif;
+
+  //Colors
+  $primary: #000;
+  $accent: #000;
+  $subtle: #000;
+  $accent2: #000;
+  $accent3: #000;
+
+body {
+  margin: 20px;
+  font-family: $body !important;
+  font-size: 1.5em !important;
+  background-color: $accent3;
+}
+
+a, a:link, a:visited {
+  font-weight: normal;
+  font-size: 1.5em !important;
+  font-family: $body;
+  color: $accent3;
+  &:hover{
+    color: $subtle;
+  }
+}
+
+h1, h3 {
+  font-family: $header;
+  font-size: 4em;
+  text-align: center;
+  color: $accent;
+  a, a:link, a:visited {
+    font-weight: normal;
+    color: $accent3;
+    &:hover{
+      color: $subtle;
+    }
+  }
+
+}

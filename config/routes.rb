@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :feedbacks
 
   resources :debates
 
   resources :friendables
 
-  get 'friend_request/:id' => 'friendables#friend_request'
-  get 'friend_request_accept/:id' => 'friendables#friend_request_accept'
-  get 'friend_request_reject/:id' => 'friendables#friend_request_reject'
+  get 'friend_request/:id' => 'friendables#friend_request', as: 'friend_request'
+  get 'friend_request_accept/:id' => 'friendables#friend_request_accept', as: 'friend_request_accept'
+  get 'friend_request_reject/:id' => 'friendables#friend_request_reject', as: 'friend_request_reject'
 
   resources :profiles
 
@@ -17,6 +19,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  get 'about' => 'home#about'
+  get 'help' => 'home#help'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

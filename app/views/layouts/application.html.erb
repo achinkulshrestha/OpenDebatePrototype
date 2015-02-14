@@ -13,12 +13,57 @@
   </head>
 
   <body>
+      <div class="row">
+        <div class="large-3 columns">
+          <h1>
+              <%= link_to('OpenDebate', root_path) %>
+          </h1>
+        </div>
+        <div class="large-9 columns">
+          <ul class="inline-list right">
+            <% if user_signed_in? %>
+              <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              </li>
+              <li>
+              <%= link_to('Edit Profile', edit_profile_path(id: current_user.id))  %>
+              </li>
+              <li>
+              <%= link_to('Join a Debate', debates_path)  %>
+              </li>
+              <li>
+              <%= link_to('Friends', friendables_path) %>
+              </li>
+            <% else %>
+              <li>
+              <%= link_to('Login', new_user_session_path)  %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
 
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
 
 
-    <%= yield %>
+
+      <div class="row">
+
+
+
+        <div class="large-9 push-3 columns">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+
+          <h3>Page Title <small>Page subtitle</small></h3>
+          <%= yield %>
+
+        </div>
+
+
+        <div class="large-3 pull-9 columns">
+        </div>
+
+      </div>
 
   </body>
 </html>
