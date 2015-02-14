@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  debate_id: 1
+  rator_id: 1
+  rated_id: 1
+  explain: 1
+  listen: 1
+  interest: 1
+  comments: MyText
+
+two:
+  debate_id: 1
+  rator_id: 1
+  rated_id: 1
+  explain: 1
+  listen: 1
+  interest: 1
+  comments: MyText

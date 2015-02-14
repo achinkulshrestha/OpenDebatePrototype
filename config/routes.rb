@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
+  resources :feedbacks
+
+  resources :debates
+
+  resources :friendables
+
+  get 'friend_request/:id' => 'friendables#friend_request'
+  get 'friend_request_accept/:id' => 'friendables#friend_request_accept'
+  get 'friend_request_reject/:id' => 'friendables#friend_request_reject'
+
+  resources :profiles
+
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

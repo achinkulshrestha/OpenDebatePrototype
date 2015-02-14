@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @debate.date %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @debate.length %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @debate.topic %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @debate.completed %>
+</p>
+
+<p>
+  <strong>Initiator:</strong>
+  <%= @debate.initiator_id %>
+</p>
+
+<p>
+  <strong>Joiner:</strong>
+  <%= @debate.joiner_id %>
+</p>
+
+<%= link_to 'Edit', edit_debate_path(@debate) %> |
+<%= link_to 'Back', debates_path %>

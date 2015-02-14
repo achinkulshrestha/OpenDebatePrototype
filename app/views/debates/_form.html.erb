@@ -1,0 +1,41 @@
+<%= form_for(@debate) do |f| %>
+  <% if @debate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@debate.errors.count, "error") %> prohibited this debate from being saved:</h2>
+
+      <ul>
+      <% @debate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br>
+    <%= f.number_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :topic %><br>
+    <%= f.select :topic, Topics['topics'] %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="field">
+    <%= f.label :initiator_id %><br>
+    <%= f.number_field :initiator_id %>
+  </div>
+  <div class="field">
+    <%= f.label :joiner_id %><br>
+    <%= f.number_field :joiner_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

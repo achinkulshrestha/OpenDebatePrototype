@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Debate:</strong>
+  <%= @feedback.debate_id %>
+</p>
+
+<p>
+  <strong>Rator:</strong>
+  <%= @feedback.rator_id %>
+</p>
+
+<p>
+  <strong>Rated:</strong>
+  <%= @feedback.rated_id %>
+</p>
+
+<p>
+  <strong>Explain:</strong>
+  <%= @feedback.explain %>
+</p>
+
+<p>
+  <strong>Listen:</strong>
+  <%= @feedback.listen %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @feedback.interest %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @feedback.comments %>
+</p>
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>
