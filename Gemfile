@@ -13,8 +13,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 #Use Posgres
 gem 'pg'
-#Use foundation
-gem 'foundation-rails'
+#Use bootstrap
+gem 'bootstrap-sass'
 # Use devise
 gem 'devise'
 #Use ActiveAdmin
