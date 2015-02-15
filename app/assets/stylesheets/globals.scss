@@ -6,3 +6,44 @@ a.navbar-brand{
 a, a:hover, a:visited {
   text-decoration: none !important;
 }
+
+.sessionform {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  text-align: center;
+  input {
+    margin: 0 auto !important;
+    margin-bottom: 10px;
+  }
+  label {
+    margin-top: 10px;
+  }
+  .actions {
+    margin-bottom: 10px;
+  }
+}
+
+.generic-form {
+  max-width: 530px;
+  padding: 15px;
+  margin: 0 auto;
+  text-align: center;
+  input {
+    margin: 0 auto !important;
+    margin-bottom: 10px;
+  }
+  label {
+    margin-top: 10px;
+  }
+  .actions {
+    margin-bottom: 10px;
+  }
+}
+
+.form-control select{
+  font-family: $font-family-serif !important;
+  option {
+    font-family: $font-family-serif !important;
+  }
+}

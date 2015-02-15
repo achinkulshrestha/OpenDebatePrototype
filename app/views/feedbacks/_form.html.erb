@@ -1,3 +1,4 @@
+<div class="generic-form">
 <%= form_for(@feedback) do |f| %>
   <% if @feedback.errors.any? %>
     <div id="error_explanation">
@@ -12,28 +13,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :debate_id %><br>
-    <%= f.number_field :debate_id %>
+    <%= f.hidden_field :debate_id, {:value => 1} %>
   </div>
   <div class="field">
-    <%= f.label :rator_id %><br>
-    <%= f.number_field :rator_id %>
+    <%= f.hidden_field :rated_id, {:value => current_user.id} %>
   </div>
   <div class="field">
-    <%= f.label :rated_id %><br>
-    <%= f.number_field :rated_id %>
+    <%= f.hidden_field :rator_id, {:value => current_user.id} %>
   </div>
   <div class="field">
     <%= f.label :explain %><br>
-    <%= f.number_field :explain %>
+    <%= f.select :explain, (1..10).step(1).to_a.map{|s| ["#{s}", s]}, {prompt: "Rate Explanation"}, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :listen %><br>
-    <%= f.number_field :listen %>
+    <%= f.select :listen, (1..10).step(1).to_a.map{|s| ["#{s}", s]}, {prompt: "Rate Listening"}, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :interest %><br>
-    <%= f.number_field :interest %>
+    <%= f.select :interest, (1..10).step(1).to_a.map{|s| ["#{s}", s]}, {prompt: "Rate Interest"}, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :comments %><br>
@@ -43,3 +41,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
