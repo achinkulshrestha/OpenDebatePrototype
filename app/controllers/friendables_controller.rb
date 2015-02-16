@@ -9,12 +9,38 @@ class FriendablesController < InheritedResources::Base
       from_current = Friendable.where(to_id: current_user.id, from_id: user.id).first
       to_current =  Friendable.where(from_id: current_user.id, to_id: user.id).first
       if from_current || to_current
-        if from_current.accepted || to_current.accepted
-         @current_friends.push(user)
-        else
-          if to_current
-            @pending_requests.push(user)
+        if from_current
+          if from_current.accepted
+            @current_friends.push(user)
           end
+        elsif to_current.accepted
+            @current_friends.push(user)
+        else
+            @pending_requests.push(user)
+        end
+      else
+        @unfriended_users.push(user)
+      end
+    end
+  end
+
+  def findfriends
+    @unfriended_users = Array.new
+    @pending_requests = Array.new
+    @current_friends = Array.new
+    @users = User.all
+    @users.each do |user|
+      from_current = Friendable.where(to_id: current_user.id, from_id: user.id).first
+      to_current =  Friendable.where(from_id: current_user.id, to_id: user.id).first
+      if from_current || to_current
+        if from_current
+          if from_current.accepted
+            @current_friends.push(user)
+          end
+        elsif to_current.accepted
+            @current_friends.push(user)
+        else
+            @pending_requests.push(user)
         end
       else
         @unfriended_users.push(user)
@@ -45,12 +71,22 @@ class FriendablesController < InheritedResources::Base
   def friend_request_accept
     friendable = Friendable.where(to_id: current_user.id,
                                   from_id: params[:id]).first
+    if friendable.nil?
+      friendable = Friendable.where(from_id: current_user.id,
+                                    to_id: params[:id]).first
+
+    end
     friendable.update_attributes(accepted: true)
   end
 
   def friend_request_reject
     friendable = Friendable.where(to_id: current_user.id,
                                   from_id: params[:id]).first
+    if friendable.nil?
+      friendable = Friendable.where(from_id: current_user.id,
+                                    to_id: params[:id]).first
+
+    end
     friendable.destroy
   end
 

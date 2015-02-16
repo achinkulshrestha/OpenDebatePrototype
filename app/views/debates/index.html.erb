@@ -1,16 +1,14 @@
-<p id="notice"><%= notice %></p>
-
+<h1>Choose a Topic</h1>
+<br/>
 <% Topics['topics'].each do |topic| %>
-  <h1><%= topic %></h1>
   <% @debates.each do |debate| %>
     <% if debate.topic == topic %>
-          <%= link_to 'Join', debate %>
+      <h2><%= link_to topic, debate %></h2>
     <% end %>
   <% end %>
+  <br />
+  <br />
+  <br />
 <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Debate', new_debate_path %>

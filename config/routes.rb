@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'about' => 'home#about', as: 'about'
+  get 'findfriends' => 'friendables#findfriends', as: 'find_friends'
   get 'contact' => 'home#contact', as: 'contact'
   get 'help' => 'home#help', as: 'help'
   get 'dashboard' => 'home#dashboard', as: 'dashboard'

@@ -1,34 +1,53 @@
-<p id="notice"><%= notice %></p>
+<div class="debatepage">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Them</h1>
+      <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/17CLlZuiBkQ?list=PL59A6BAB16A05B4AA"></iframe>
+      </div>
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-2">
+      <h1>You</h1>
+      <div class="embed-responsive smaller embed-responsive-4by3">
+        <iframe height="200" class="embed-responsive-item" src="https://www.youtube.com/embed/17CLlZuiBkQ?list=PL59A6BAB16A05B4AA"></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h1>Chat</h1>
+      <div class="chatbox">
+      <p class="person1"><strong>You:</strong>Hey how's it going?</p>
+      <p class="person2"><strong>Them:</strong>Great, let's do this thing! :)</p>
+      <p class="person1"><strong>You:</strong>Awesome!</p>
+      <p class="person1"><strong>You:</strong>Hey how's it going?</p>
+      <p class="person2"><strong>Them:</strong>Great, let's do this thing! :)</p>
+      <p class="person1"><strong>You:</strong>Hey how's it going?</p>
+      <p class="person2"><strong>Them:</strong>Great, let's do this thing! :)</p>
+      <p class="person1"><strong>You:</strong>Hey how's it going?</p>
+      <p class="person2"><strong>Them:</strong>Great, let's do this thing! :)</p>
+      <p class="person2"><strong>Them:</strong>Great, let's do this thing! :)</p>
+      <p class="person2"><strong>Them:</strong>Great, let's do this thing! :)</p>
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Type here...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Send!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+  <div class="finish-button">
+  <br/>
+  <br/>
+  <br/>
+    <h1>
+      You're Debating
+      <strong>
+        <%= @debate.topic %>
+      </strong>
+    </h1>
 
-<p>
-  <strong>Date:</strong>
-  <%= @debate.date %>
-</p>
+      <%= link_to "<button class='btn btn-default finish' type='submit'>End the Debate!</button>".html_safe, new_feedback_path %>
 
-<p>
-  <strong>Length:</strong>
-  <%= @debate.length %>
-</p>
+</div>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @debate.topic %>
-</p>
-
-<p>
-  <strong>Completed:</strong>
-  <%= @debate.completed %>
-</p>
-
-<p>
-  <strong>Initiator:</strong>
-  <%= @debate.initiator_id %>
-</p>
-
-<p>
-  <strong>Joiner:</strong>
-  <%= @debate.joiner_id %>
-</p>
-
-<%= link_to 'Edit', edit_debate_path(@debate) %> |
-<%= link_to 'Back', debates_path %>
+</div>
